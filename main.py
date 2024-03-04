@@ -5,28 +5,6 @@ import youtube_dl
 import requests
 import emojis
 
-sheikhImageList = [
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787968814874674/image1.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787969062600734/image2.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787969293680650/image3.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787969570242570/image4.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787969906180106/image5.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787970160590908/image6.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787970391539732/image7.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787970740191242/image8.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856787971038511114/image9.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788035525279764/image0.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788035748233246/image1.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788035991240734/image2.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788036243554335/image3.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788036569530378/image4.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788036909400064/image5.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788037471830016/image6.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788037785354300/image7.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788038038716416/image8.png',
-    'https://cdn.discordapp.com/attachments/827511520065749035/856788038272155648/image9.png'
-]
-
 ydl_opts = {
     "format":
     "bestaudio/best",
@@ -163,9 +141,6 @@ async def on_message(message):
         else:
             for emoji in serverDict[message.guild].keys():
                 await message.channel.send(emoji + ' : ' + str(serverDict[message.guild][emoji]))
-
-    if message.content.startswith("--sheikhassim"):
-        await message.channel.send(sheikhImageList[random.randint(0, 18)])
 
     if message.content.startswith("--test"):
         for member in message.guild.members:
